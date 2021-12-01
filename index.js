@@ -23,6 +23,22 @@ const number = 0
 var number2 = 0
 number2 = 1 // No arroja error
 
+// ----- let: La instrucción let declara una variable de alcance local con ámbito de bloque(block scope), 
+// la cual, opcionalmente, puede ser inicializada con algún valor.
+
+let number3 = 3
+console.log('numero 3', number3)
+
+if (true) {
+    var number4 = 4 // alcance global
+    let number5 = 5 // alcance local
+    console.log('numero 4 dentro de bloque', number4)
+    console.log('numero 5 dentro de bloque', number5)
+}
+
+console.log('numero 4 fuera de bloque', number4)
+// console.log('number 5 fuera de bloque', number5) // Aparecera error
+
 // ---- TIPOS DE DATOS
 
 const text = 'Hola'
@@ -41,7 +57,11 @@ console.log(numberFloat, typeof numberFloat) // number
 // operaciones de recorrido y de mutación. Tanto la longitud como el tipo de los elementos de un array 
 // son variables.
 
-const array = [-123, 2, 'texto', '4', {'year': 2021}, [0, 0, 0.5]] // Se accede por un índice, que inicia desde 0
+const array = [-123, 2, 'texto', '4', {
+        'year': 2021
+    },
+    [0, 0, 0.5]
+] // Se accede por un índice, que inicia desde 0
 console.log(array, typeof array) // object
 
 for (var i = 0; i < array.length; i++) {
@@ -56,16 +76,16 @@ array.forEach(element => {
 
     // Condicionales: validan si una condicion es verdadera o falsa
 
-    if (element == 'texto' || element == '4') {     // || operador lógico OR, una de las condiciones debe ser verdadera
+    if (element == 'texto' || element == '4') { // || operador lógico OR, una de las condiciones debe ser verdadera
         console.log('Encontramos los datos tipo string!', element)
 
-    } else if (typeof element == 'number' && element > 0) {     // && operador lógico AND -> Ambas condiciones deben cumplirse
+    } else if (typeof element == 'number' && element > 0) { // && operador lógico AND -> Ambas condiciones deben cumplirse
         console.log('Numero mayor que 0 encontrado', element)
 
     } else {
         console.log('No se encontró ningún dato relevante')
     }
-    
+
 })
 
 // ---- JavaScript está diseñado en un paradigma simple basado en objetos. Un objeto es una colección de 
@@ -73,7 +93,7 @@ array.forEach(element => {
 
 // ejemplo: 
 
-const  beam = {
+const beam = {
     'width': 0.3,
     'height': 0.5,
     'material': {
@@ -82,7 +102,10 @@ const  beam = {
             'unit': 'MPa'
         },
     },
-    'coordinates': [[0, 0, 0], [1, 0, 0.5]] // [[xi, yi, zi], [xj, yj, zj]]
+    'coordinates': [
+        [0, 0, 0],
+        [1, 0, 0.5]
+    ] // [[xi, yi, zi], [xj, yj, zj]]
 }
 
 // Para obtener el valor de la resistencia de la viga
@@ -147,7 +170,3 @@ function add(a, b) {
 
 const resultAdd = add(1, 2) // 3
 console.log('resultado: ', resultAdd)
-
-
-
-
